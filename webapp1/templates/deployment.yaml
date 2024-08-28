@@ -32,3 +32,10 @@ spec:
           limits:
             memory: "128Mi" # 128 mebibytes 
             cpu: "100m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 3
+          periodSeconds: 60
+        
